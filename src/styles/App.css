@@ -1,0 +1,106 @@
+.wrapper {
+   display: flex;
+   justify-content: center;
+}
+
+.nav-panel {
+   display: flex;
+   justify-content: space-between;
+   font-size: 1.4em;
+   font-weight: 600;
+   padding: 15px;
+   box-shadow: 0px 4px 8px 1px #7e7e7e;
+   color: #100f0f;
+   background-color: #d3d0d0;
+}
+
+.wrapper-keyboard {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.keyboard {
+   display: grid;
+   margin: 25px;
+   grid-template-columns: repeat(10, 4fr);
+   grid-gap: 7px;
+
+}
+
+.words-style {
+   margin-top: 50px;
+   width: 400px;
+}
+
+.wrapper-empty {
+   display: flex;
+   justify-content: center;
+}
+
+.wrapper-empty_semi {
+   display: flex;
+   justify-content: start;
+}
+
+.word-list {
+   display: flex;
+   justify-content: center;
+}
+
+.letter {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 35px;
+   box-shadow: 0px 2px 4px 1px #7e7e7e;
+   width: 60px;
+   height: 60px;
+   margin: 5px;
+}
+
+
+.keyboard button {
+   width: 50px;
+   height: 50px;
+   display: flex;
+   border-radius: 5px;
+   justify-content: center;
+   align-items: center;
+   background-color: #e6e6e6;
+   border: 1px solid #ccc;
+}
+
+.keyboard button:hover {
+   background-color: #e0e0e0;
+}
+
+.keyboard button:active {
+   background-color: #c0c0c0;
+}
+
+.modal-active {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgb(0, 0, 0, 0.3);
+   position: fixed;
+   top: 0;
+   left: 0;
+}
+
+.modal-close {
+   display: none;
+}
+
+.modal_content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+   width: 300px;
+   height: 200px;
+   background-color: #f0f0f0;
+}
