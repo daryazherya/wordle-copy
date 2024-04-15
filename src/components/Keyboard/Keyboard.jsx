@@ -21,7 +21,7 @@ const Keyboard = ({ keyboardLettersColors, onEnter, addLetter, deleteLetter, sta
             window.removeEventListener('keydown', handler)
         }
 
-    }, [state]);
+    }, [state, onEnter, addLetter, deleteLetter]);
 
     return (
         <div className="wrapper-keyboard">
