@@ -20,7 +20,6 @@ const Keyboard = ({ keyboardLettersColors, onEnter, addLetter, deleteLetter, sta
         return () => {
             window.removeEventListener('keydown', handler)
         }
-
     }, [state, onEnter, addLetter, deleteLetter]);
 
     return (
