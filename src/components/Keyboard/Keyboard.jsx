@@ -12,7 +12,6 @@ const Keyboard = ({
     onEnter,
     addLetter,
     deleteLetter,
-    state,
 }) => {
     useEffect(() => {
         function handler(e) {
@@ -30,7 +29,7 @@ const Keyboard = ({
         return () => {
             window.removeEventListener("keydown", handler);
         };
-    }, []);
+    }, ['addLetter', 'deleteLetter','onEnter']);
 
     return (
         <div className="wrapper-keyboard">
