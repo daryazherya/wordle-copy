@@ -8,22 +8,21 @@ import Modal from './components/Modal/Modal';
 import { randomRightWord } from './helpers/randomRightWord/randomRightWord';
 
 
-function App() {
-
+function Game({ rightWord, generateNewWord }) {
     const [state, setState] = useState({
-        rightWord: randomRightWord(),
         words: [],
         inputWord: '',
     })
     const [activeModal, setActiveModal] = useState(true);
     const numberEmpty = 6 - state.words.length;
-    const win = state.words.includes(state.rightWord);
+    const win = state.words.includes(rightWord);
     const loser = state.words.length === 6 && !win;
-    const keyboardLettersColors = createColorfulKeyboard(state.rightWord, state.words);
+    const keyboardLettersColors = createColorfulKeyboard(rightWord, state.words);
 
 
     const onEnter = () => {
         setState(prev => {
+            console.log({prev});
             if (prev.inputWord.length === 5) {
                 prev.words.push(prev.inputWord)
                 return {
@@ -54,17 +53,18 @@ function App() {
                 status={win}
                 activeModal={activeModal}
                 setActiveModal={setActiveModal}
-                setState={setState}
-                randomRightWord={randomRightWord}
+                onClick={generateNewWord}
             />
             <Modal text={'К сожалению, ты не угадал слово.'}
                 status={loser}
                 activeModal={activeModal}
                 setActiveModal={setActiveModal}
+                onClick={generateNewWord}
             />
             <div className='wrapper'>
                 <Words
                     numberEmpty={numberEmpty}
+                    rightWord={rightWord}
                     state={state}
                 />
             </div>
@@ -77,6 +77,15 @@ function App() {
             />
         </div>
     )
+}
+
+function App() {
+    const [rightWord, setRightWord] = useState(randomRightWord());
+    function generateNewWord () {
+        setRightWord(randomRightWord());
+    }
+   
+    return <Game key={rightWord} rightWord={rightWord} generateNewWord={generateNewWord} />
 }
 
 export default App;

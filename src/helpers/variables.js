@@ -27,6 +27,10 @@ export const alphabet = [
     "m",
 ];
 
+export const firstRow = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
+export const secondRow = ["a", "s", "d", "f", "g", "h", "j", "k", "l", "z"];
+export const thirdRow = ["x", "c", "v", "b", "n", "m"];
+
 export const words = [
     "HELLO",
     "WORLD",

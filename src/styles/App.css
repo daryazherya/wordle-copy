@@ -21,11 +21,13 @@
 }
 
 .keyboard {
-   display: grid;
-   margin: 25px;
-   grid-template-columns: repeat(10, 4fr);
-   grid-gap: 7px;
+   margin: 50px;
+   width: 500px;
+}
 
+.wrapper-keyboard-button {
+   display: flex;
+   justify-content: center;
 }
 
 .words-style {

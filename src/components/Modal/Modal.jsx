@@ -1,13 +1,13 @@
-const Modal = ({ text, status, activeModal, setActiveModal,setState, randomRightWord }) => {
+const Modal = ({ text, status, activeModal, setActiveModal, onClick }) => {
+    if(!status) {
+        return null
+    }
+
     return (
-        status && <div className={activeModal ? 'modal-active' : 'modal-close'}
+         <div className={activeModal ? 'modal-active' : 'modal-close'}
             onClick={() => {
                 setActiveModal(!status)
-                setState({
-                    rightWord: randomRightWord(),
-                    words: [],
-                    inputWord: '',
-                })
+                onClick()
             }}
         >
             <div className="modal_content">
